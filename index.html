@@ -108,23 +108,33 @@
       function simpan() {
         const nim = document.getElementById('nim').value;
         const nama = document.getElementById('nama').value;
-        const presenT = parseFloat(document.getElementById('presen-t').value) || 0;
-        const tugasT = parseFloat(document.getElementById('tugas-t').value) || 0;
-        const utsT = parseFloat(document.getElementById('uts-t').value) || 0;
-        const uasT = parseFloat(document.getElementById('uas-t').value) || 0;
-        const presenP = parseFloat(document.getElementById('presen-p').value) || 0;
-        const tugasP = parseFloat(document.getElementById('tugas-p').value) || 0;
-        const utsP = parseFloat(document.getElementById('uts-p').value) || 0;
-        const uasP = parseFloat(document.getElementById('uas-p').value) || 0;
+        const presenT = document.getElementById('presen-t').value;
+        const tugasT = document.getElementById('tugas-t').value;
+        const utsT = document.getElementById('uts-t').value;
+        const uasT = document.getElementById('uas-t').value;
+        const presenP = document.getElementById('presen-p').value;
+        const tugasP = document.getElementById('tugas-p').value;
+        const utsP = document.getElementById('uts-p').value;
+        const uasP = document.getElementById('uas-p').value;
 
         if (!nim || !nama || !presenT || !tugasT || !utsT || !uasT || !presenP || !tugasP || !utsP || !uasP) {
           alert("Semua bidang harus diisi.");
-          return;}
+          return;
+        }
 
-        const presensi = (presenT + presenP) / 2;
-        const tugas = (tugasT + tugasP) / 2;
-        const uts = (utsT + utsP) / 2;
-        const uas = (uasT + uasP) / 2;
+        const presenTVal = parseFloat(presenT) || 0;
+        const tugasTVal = parseFloat(tugasT) || 0;
+        const utsTVal = parseFloat(utsT) || 0;
+        const uasTVal = parseFloat(uasT) || 0;
+        const presenPVal = parseFloat(presenP) || 0;
+        const tugasPVal = parseFloat(tugasP) || 0;
+        const utsPVal = parseFloat(utsP) || 0;
+        const uasPVal = parseFloat(uasP) || 0;
+
+        const presensi = (presenTVal + presenPVal) / 2;
+        const tugas = (tugasTVal + tugasPVal) / 2;
+        const uts = (utsTVal + utsPVal) / 2;
+        const uas = (uasTVal + uasPVal) / 2;
         const nilaiAkhir = (presensi + tugas + uts + uas) / 4;
 
         let grade;
