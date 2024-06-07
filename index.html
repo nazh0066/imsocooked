@@ -117,6 +117,10 @@
         const utsP = parseFloat(document.getElementById('uts-p').value) || 0;
         const uasP = parseFloat(document.getElementById('uas-p').value) || 0;
 
+        if (!nim || !nama || !presenT || !tugasT || !utsT || !uasT || !presenP || !tugasP || !utsP || !uasP) {
+          alert("Semua bidang harus diisi.");
+          return;
+
         const presensi = (presenT + presenP) / 2;
         const tugas = (tugasT + tugasP) / 2;
         const uts = (utsT + utsP) / 2;
